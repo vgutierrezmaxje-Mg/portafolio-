@@ -13,20 +13,6 @@
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="IMG/favicon.ico">
     <link rel="stylesheet" href="estilos.css">
-
-
-
-    <script src="codes/Proyecto4-GestionBibliotecaria/ControlPrestamo.js"></script>
-    <script src="codes/Proyecto4-GestionBibliotecaria/GestionMaterial.js"></script>
-    <script src="codes/Proyecto4-GestionBibliotecaria/ReporteGeneral.js"></script>
-    <script src="codes/Proyecto4-GestionBibliotecaria/ReservacionLibros.js"></script>
-
-    <script src="codes/Proyecto5-Polleria/RegistroClientes.js"></script>
-    <script src="codes/Proyecto5-Polleria/ControlPedidos.js"></script>
-
-    <script src="codes/Proyecto6-RecaudacionMunicipal/Base-Datos.js"></script>
-    <script src="codes/Proyecto6-RecaudacionMunicipal/ConexionBD.js"></script>
-    <script src="codes/Proyecto6-RecaudacionMunicipal/Deudas.js"></script>
 </head>
 
 <body>
@@ -1445,7 +1431,7 @@
                                     </details>
                                 </div>
                                 <footer class="project-card__footer">
-                                    <a href="https://github.com/maxjvalladolid" target="_blank"
+                                    <a href="https://github.com/vgutierrezmaxje-Mg/portafolio-" target="_blank"
                                         rel="noopener noreferrer" class="project-btn project-btn--code">
                                         <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                             <path fill-rule="evenodd"
@@ -1454,7 +1440,16 @@
                                         </svg>
                                         Ver en GitHub
                                     </a>
-                                    <span class="project-btn project-btn--here">← Estás aquí</span>
+                                    <a href="https://vgutierrezmaxje-mg.github.io/portafolio-" target="_blank"
+                                        rel="noopener noreferrer" class="project-btn project-btn--demo">
+                                        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                            <path fill-rule="evenodd"
+                                                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        Ver en vivo
+                                    </a>
                                 </footer>
                             </article>
                         </div>
@@ -2400,508 +2395,32 @@
 
     <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
 
-
     <!-- ================================================================
          SCRIPTS — Interactividad Dinámica Optimizada
     ================================================================ -->
-    <script>
-        /* ====================================================
-           DATOS DE LOS PROYECTOS (Centralizados)
-        ==================================================== */
-        // ============================================================
-        // OBJETO projectsData — código externalizado con codeUrl
-        // Coloca tus archivos en la carpeta: assets/code/
-        // ============================================================
-        const projectsData = {
-            1: {
-                title: "Base de Datos Relacional — Sistema de Gestión para Botica",
-                codeUrl: "assets/code/proyecto1-botica.sql",
-                images: [ /* sin cambios */]
-            },
-            2: {
-                title: "Sistema de Riego Automático Inteligente",
-                codeUrl: "assets/code/proyecto2-riego.ino",
-                images: [ /* sin cambios */]
-            },
-            3: {
-                title: "Simulador de Ondas Electromagnéticas",
-                codeUrl: "assets/code/proyecto3-ondas-em.ino",
-                images: [ /* sin cambios */]
-            },
-            4: {
-                title: "Gestión de una Biblioteca Universitaria",
-                codeVars: [
-                    { label: "ControlPrestamo.js", var: "CODE_04_CP" },
-                    { label: "GestionMaterial.js", var: "CODE_04_GM" },
-                    { label: "ReporteGeneral.js", var: "CODE_04_RG" },
-                    { label: "ReservacionLibros.js", var: "CODE_04_RL" }
-                ],
-                images: [
-                    { src: "Capturas/Cap-GtBibliotecaria-project04/login.png", alt: "Dashboard Principal del Sistema de Gestión para Biblioteca Universitaria" },
-                    { src: "Capturas/Cap-GtBibliotecaria-project04/ControlPrestamos.png", alt: "Módulo de Registro y Control de Libros" },
-                    { src: "Capturas/Cap-GtBibliotecaria-project04/ReservacionLibros.png", alt: "Módulo de Gestión de Reservas y Usuarios" },
-                    { src: "Capturas/Cap-GtBibliotecaria-project04/DevolucionLibros.png", alt: "Módulo de Devoluciones y Multas" },
-                    { src: "Capturas/Cap-GtBibliotecaria-project04/GestionMaterial.png", alt: "Panel de Gestión de Material Bibliográfico" },
-                    { src: "Capturas/Cap-GtBibliotecaria-project04/ListadoUsuarios.png", alt: "Listado de Usuarios Registrados en el Sistema" },
-                    { src: "Capturas/Cap-GtBibliotecaria-project04/Reportes.png", alt: "Módulo de Reportes y Estadísticas de Préstamos" }
-                ]
-            },
-            5: {
-                title: "Sistema de una Pollería",
-                codeVars: [
-                    { label: "RegistroClientes.js", var: "CODE_5_RC" },
-                    { label: "ControlPedidos.js", var: "CODE_05_CP" }
-                ],
-                images: [
-                    { src: "Capturas/Cap-Polleria-project05/RestauranteLogin.png", alt: "Dashboard Principal del Sistema de Gestión para Pollería" },
-                    { src: "Capturas/Cap-Polleria-project05/RegistroProductos.png", alt: "Módulo de Registro y Control de Pedidos" },
-                    { src: "Capturas/Cap-Polleria-project05/RegistroClientes.png", alt: "Módulo de Gestión de Clientes" }
-                ]
-            },
-            6: {
-                title: "Sistema de Recaudación Municipal",
-                codeVars: [
-                    { label: "Base-Datos.js", var: "CODE_6_BD" },
-                    { label: "ConexionBD.js", var: "CODE_6_CNX" },
-                    { label: "Deudas.js", var: "CODE_6_DD" }
-                ],
-                images: [
-                    { src: "Capturas/Cap-RcMunicipal-porject06/InicioRecaudacionMc.png", alt: "Dashboard Principal de Administración del Sistema Tributario" },
-                    { src: "Capturas/Cap-RcMunicipal-porject06/ConsultaDeudasTributarias.png", alt: "Módulo de Consulta de Deudas de Contribuyentes" },
-                    { src: "Capturas/Cap-RcMunicipal-porject06/RegistroUsuariosContribuyentes.png", alt: "Registro y Control de Contribuyentes Municipales" },
-                    { src: "Capturas/Cap-RcMunicipal-porject06/ReporteObligacionesMunicipales.png", alt: "Consultad de Obligación Municipales" },
-                    { src: "Capturas/Cap-RcMunicipal-porject06/RegistroObligaciones.png", alt: "Registro de Obligaciones de Contribuyentes" },
-                    { src: "Capturas/Cap-RcMunicipal-porject06/EmisionRecibosPagos.png", alt: "Módulo de Caja y Emisión de Comprobantes de Pago" },
-                    { src: "Capturas/Cap-RcMunicipal-porject06/ConfiguracionGlobales.png", alt: "Panel de Configuración Goblales" },
-                    { src: "Capturas/Cap-RcMunicipal-porject06/AuditoriaLogSistemas.png", alt: "Registro de Auditoría y Logs de Transacciones del Sistema" },
-                    { src: "Capturas/Cap-RcMunicipal-porject06/BD-RecaudacionMc.png", alt: "Modelo de Datos del Sistema de Recaudación Municipal" }
-                ]
 
-            },
-            7: {
-                title: "Portafolio Profesional Web",
-                lang: "html",
-                filename: "index.html",
-                codeUrl: "assets/code/proyecto7-portafolio.html",
-                images: []
-            }
-        };
+    <!-- Scripts de proyectos (código fuente para modales) -->
+    <script src="codes/Proyecto1-GestionFarmaceutica/BD-Botica.js"></script>
+    <script src="codes/Proyecto1-GestionFarmaceutica/Consultas.js"></script>
 
-        /* ====================================================
-           MÓDULO 1: Active Navigation Highlight
-        ==================================================== */
-        (function initActiveNav() {
-            const navLinks = document.querySelectorAll('.sidebar__nav-link');
-            const sections = document.querySelectorAll('.content-section[data-view]');
-            if (!sections.length || !navLinks.length) return;
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const activeId = entry.target.getAttribute('data-view');
-                            navLinks.forEach(link => {
-                                const isActive = link.getAttribute('data-section') === activeId;
-                                link.classList.toggle('is-active', isActive);
-                                link.setAttribute('aria-current', isActive ? 'page' : 'false');
-                            });
-                        }
-                    });
-                },
-                { rootMargin: '-10% 0px -60% 0px', threshold: 0 }
-            );
-            sections.forEach(section => observer.observe(section));
-        })();
+    <script src="codes/Proyecto2-RiegoAutomatico/RiegoAutonomo.js"></script>
 
-        /* ====================================================
-           MÓDULO: Mobile Menu Toggle
-        ==================================================== */
-        (function initMobileMenu() {
-            const toggleBtn = document.getElementById('btn-mobile-menu');
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('sidebar-overlay');
-            if (!toggleBtn || !sidebar || !overlay) return;
+    <script src="codes/Proyecto3-SeñalesAnalogias/AnalizadorSenales.js"></script>
 
-            function openMenu() {
-                sidebar.classList.add('sidebar--open');
-                overlay.classList.add('sidebar-overlay--visible');
-                toggleBtn.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
-            }
+    <script src="codes/Proyecto4-GestionBibliotecaria/ControlPrestamo.js"></script>
+    <script src="codes/Proyecto4-GestionBibliotecaria/GestionMaterial.js"></script>
+    <script src="codes/Proyecto4-GestionBibliotecaria/ReporteGeneral.js"></script>
+    <script src="codes/Proyecto4-GestionBibliotecaria/ReservacionLibros.js"></script>
 
-            function closeMenu() {
-                sidebar.classList.remove('sidebar--open');
-                overlay.classList.remove('sidebar-overlay--visible');
-                toggleBtn.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
+    <script src="codes/Proyecto5-Polleria/RegistroClientes.js"></script>
+    <script src="codes/Proyecto5-Polleria/ControlPedidos.js"></script>
 
-            toggleBtn.addEventListener('click', () => {
-                sidebar.classList.contains('sidebar--open') ? closeMenu() : openMenu();
-            });
-            overlay.addEventListener('click', closeMenu);
-        })();
+    <script src="codes/Proyecto6-RecaudacionMunicipal/Base-Datos.js"></script>
+    <script src="codes/Proyecto6-RecaudacionMunicipal/ConexionBD.js"></script>
+    <script src="codes/Proyecto6-RecaudacionMunicipal/Deudas.js"></script>
 
-        /* ====================================================
-           MÓDULO 3: Scroll Reveal
-        ==================================================== */
-        (function initScrollReveal() {
-            const revealTargets = document.querySelectorAll(
-                '.content-section, .project-card, .article-card, .metric-card, .timeline__entry, .meta-card, .formacion-card, .problema-card, .dashboard-card'
-            );
-            if (!('IntersectionObserver' in window)) {
-                revealTargets.forEach(el => el.classList.add('is-revealed'));
-                return;
-            }
-            const revealObserver = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-revealed');
-                            revealObserver.unobserve(entry.target);
-                        }
-                    });
-                },
-                { threshold: 0.08 }
-            );
-            revealTargets.forEach((el, index) => {
-                el.style.setProperty('--reveal-delay', `${(index % 6) * 80}ms`);
-                revealObserver.observe(el);
-            });
-        })();
-
-        /* ====================================================
-           MÓDULO: Project Filters (Dinámico)
-        ==================================================== */
-        (function initProjectFilters() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-            if (!filterBtns.length) return;
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('is-active'));
-                    btn.classList.add('is-active');
-
-                    const filter = btn.dataset.filter;
-
-                    projectCards.forEach(card => {
-                        const tech = card.dataset.tech || '';
-                        const shouldShow = filter === 'all' || tech.includes(filter);
-
-                        if (shouldShow) {
-                            card.style.display = '';
-                            requestAnimationFrame(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            });
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                if (!card.dataset.tech.includes(btn.dataset.filter) && btn.dataset.filter !== 'all') {
-                                    card.style.display = 'none';
-                                }
-                            }, 300);
-                        }
-                    });
-                });
-            });
-        })();
-
-        /* ====================================================
-           MÓDULO: Modal Dinámico de Código Fuente
-        ==================================================== */
-        (function initCodeModal() {
-            const modal = document.getElementById('code-modal');
-            const modalTitle = document.getElementById('code-modal-title');
-            const modalFilename = document.getElementById('code-modal-filename');
-            const modalContent = document.getElementById('code-modal-content');
-            const lineNumbers = document.getElementById('code-line-numbers');
-            const tabsContainer = document.getElementById('code-modal-tabs');
-            const closeBtn = modal.querySelector('.code-modal__control--close');
-
-            // Renderiza el código y números de línea
-            function renderCode(text) {
-                modalContent.textContent = text;
-                const lines = text.split('\n').length;
-                lineNumbers.innerHTML = Array.from(
-                    { length: lines },
-                    (_, i) => `<span>${i + 1}</span>`
-                ).join('');
-            }
-
-            // Construye las pestañas dinámicamente
-            function buildTabs(files) {
-                tabsContainer.innerHTML = '';
-                files.forEach((file, index) => {
-                    const tab = document.createElement('div');
-                    tab.className = 'code-modal__tab' + (index === 0 ? ' code-modal__tab--active' : '');
-                    tab.innerHTML = `
-                <span class="code-modal__tab-icon">📄</span>
-                <span class="code-modal__tab-name">${file.label}</span>
-            `;
-                    tab.addEventListener('click', () => {
-                        // Quitar activo de todas
-                        tabsContainer.querySelectorAll('.code-modal__tab')
-                            .forEach(t => t.classList.remove('code-modal__tab--active'));
-                        // Activar la clickeada
-                        tab.classList.add('code-modal__tab--active');
-                        // Mostrar su código
-                        renderCode(window[file.var] || `// ⚠ No se cargó: ${file.var}`);
-                    });
-                    tabsContainer.appendChild(tab);
-                });
-            }
-
-            document.querySelectorAll('[data-action="code"]').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const project = projectsData[btn.dataset.project];
-                    if (!project) return;
-
-                    modalTitle.textContent = project.title;
-
-                    // ── Proyecto con MÚLTIPLES archivos (pestañas) ──
-                    if (project.codeVars && project.codeVars.length > 0) {
-                        buildTabs(project.codeVars);
-                        modalFilename.textContent = project.codeVars[0].label;
-                        renderCode(window[project.codeVars[0].var] || '// Archivo no encontrado.');
-
-                        // ── Proyecto con UN solo archivo ──
-                    } else {
-                        tabsContainer.innerHTML = `
-                    <div class="code-modal__tab code-modal__tab--active">
-                        <span class="code-modal__tab-icon">📄</span>
-                        <span class="code-modal__tab-name">${project.filename || 'codigo.txt'}</span>
-                    </div>`;
-                        modalFilename.textContent = project.filename;
-                        const text = project.codeVar
-                            ? (window[project.codeVar] || '// Variable no encontrada.')
-                            : (project.code || '// Sin código disponible.');
-                        renderCode(text);
-                    }
-
-                    modal.showModal();
-                });
-            });
-
-            closeBtn.addEventListener('click', () => modal.close());
-            modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
-        })();
-
-        /* ====================================================
-           MÓDULO: Modal Dinámico de Demo / Capturas
-        ==================================================== */
-        (function initDemoModal() {
-            const modal = document.getElementById('demo-modal');
-            const modalTitle = document.getElementById('demo-modal-title');
-            const modalContent = document.getElementById('demo-modal-content');
-            const closeBtn = modal.querySelector('.demo-modal__close');
-
-            // Abrir modal con imágenes del proyecto
-            document.querySelectorAll('[data-action="demo"]').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const projectId = btn.dataset.project;
-                    const project = projectsData[projectId];
-
-                    if (project && project.images.length > 0) {
-                        modalTitle.textContent = project.title + ' — Demo';
-
-                        // Generar galería de imágenes
-                        modalContent.innerHTML = project.images.map(img => `
-                            <figure class="demo-modal__figure">
-                                <img src="${img.src}" alt="${img.alt}" class="demo-modal__image" loading="lazy">
-                                <figcaption class="demo-modal__caption">${img.alt}</figcaption>
-                            </figure>
-                        `).join('');
-
-                        modal.showModal();
-                    }
-                });
-            });
-
-            // Cerrar modal
-            closeBtn.addEventListener('click', () => modal.close());
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) modal.close();
-            });
-        })();
-
-        /* ====================================================
-           MÓDULO 6: Textarea Character Counter
-        ==================================================== */
-        (function initCharCounter() {
-            const textarea = document.getElementById('campo-mensaje');
-            const counter = document.getElementById('mensaje-counter');
-            if (!textarea || !counter) return;
-            textarea.addEventListener('input', () => {
-                counter.textContent = `${textarea.value.length} / 1000`;
-            });
-        })();
-
-        /* ====================================================
-           MÓDULO 7: Validación Avanzada del Formulario
-        ==================================================== */
-        (function initContactForm() {
-            const form = document.getElementById('contact-form');
-            const submitBtn = document.getElementById('btn-submit');
-            const successMsg = document.getElementById('form-success');
-
-            if (!form) return;
-
-            // Objeto con las configuraciones y mensajes personalizados para cada campo
-            const fields = {
-                nombre: {
-                    input: document.getElementById('campo-nombre'),
-                    errorSpan: document.getElementById('nombre-error'),
-                    getMsg: (val) => {
-                        if (!val.trim()) return "El nombre completo es obligatorio.";
-                        if (val.trim().length < 2) return "El nombre debe tener al menos 2 caracteres.";
-                        return "";
-                    }
-                },
-                email: {
-                    input: document.getElementById('campo-email'),
-                    errorSpan: document.getElementById('email-error'),
-                    getMsg: (val) => {
-                        if (!val.trim()) return "El correo electrónico es obligatorio.";
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailRegex.test(val.trim())) return "Por favor, ingresa un correo válido.";
-                        return "";
-                    }
-                },
-                asunto: {
-                    input: document.getElementById('campo-asunto'),
-                    errorSpan: document.getElementById('asunto-error'),
-                    getMsg: (val) => {
-                        if (!val.trim()) return "El asunto es obligatorio.";
-                        if (val.trim().length < 5) return "El asunto debe detallar al menos 5 caracteres.";
-                        return "";
-                    }
-                },
-                tipo: {
-                    input: document.getElementById('campo-tipo'),
-                    errorSpan: null,
-                    getMsg: (val) => (!val ? "Selecciona un tipo de colaboración." : "")
-                },
-                mensaje: {
-                    input: document.getElementById('campo-mensaje'),
-                    errorSpan: document.getElementById('mensaje-error'),
-                    counter: document.getElementById('mensaje-counter'),
-                    getMsg: (val) => {
-                        if (!val.trim()) return "El mensaje es obligatorio.";
-                        if (val.trim().length < 20) return "Cuéntame un poco más, mínimo 20 caracteres.";
-                        return "";
-                    }
-                }
-            };
-
-            // 1. Contador dinámico de caracteres para el Textarea
-            if (fields.mensaje.input && fields.mensaje.counter) {
-                fields.mensaje.input.addEventListener('input', (e) => {
-                    const len = e.target.value.length;
-                    fields.mensaje.counter.textContent = `${len} / 1000`;
-                    if (len >= 20) {
-                        fields.mensaje.input.classList.remove('is-invalid');
-                        if (fields.mensaje.errorSpan) fields.mensaje.errorSpan.textContent = "";
-                    }
-                });
-            }
-
-            // 2. Función clave para validar un solo campo
-            function validarCampo(key) {
-                const field = fields[key];
-                const mensajeError = field.getMsg(field.input.value);
-
-                if (mensajeError) {
-                    field.input.classList.add('is-invalid');
-                    if (field.errorSpan) {
-                        field.errorSpan.textContent = mensajeError;
-                        field.errorSpan.style.display = 'block';
-                    }
-                    return false;
-                } else {
-                    field.input.classList.remove('is-invalid');
-                    if (field.errorSpan) {
-                        field.errorSpan.textContent = "";
-                        field.errorSpan.style.display = 'none';
-                    }
-                    return true;
-                }
-            }
-
-            // 3. Agregar eventos en tiempo real (blur) para limpiar o alertar al salir del campo
-            Object.keys(fields).forEach(key => {
-                fields[key].input.addEventListener('blur', () => validarCampo(key));
-                fields[key].input.addEventListener('input', () => {
-                    if (fields[key].getMsg(fields[key].input.value) === "") {
-                        fields[key].input.classList.remove('is-invalid');
-                        if (fields[key].errorSpan) fields[key].errorSpan.textContent = "";
-                    }
-                });
-            });
-
-            // 4. Interceptamos el Submit (Enviar Mensaje)
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                let formularioValido = true;
-                let primerCampoInvalido = null;
-
-                Object.keys(fields).forEach(key => {
-                    const esValido = validarCampo(key);
-                    if (!esValido) {
-                        formularioValido = false;
-                        if (!primerCampoInvalido) {
-                            primerCampoInvalido = fields[key].input;
-                        }
-                    }
-                });
-
-                if (!formularioValido) {
-                    if (primerCampoInvalido) primerCampoInvalido.focus();
-                    return;
-                }
-
-                // 5. Si todo está limpio, simula el envío exitoso con loader
-                submitBtn.disabled = true;
-                submitBtn.classList.add('is-loading');
-
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('is-loading');
-                    form.reset();
-
-                    if (fields.mensaje.counter) fields.mensaje.counter.textContent = "0 / 1000";
-
-                    successMsg.removeAttribute('hidden');
-                    setTimeout(() => successMsg.setAttribute('hidden', ''), 5000);
-                }, 1500);
-            });
-        })();
-
-        /* ====================================================
-           MÓDULO 8: Skill Bar Animations
-        ==================================================== */
-        (function initSkillBars() {
-            const fills = document.querySelectorAll('.skill-item__fill');
-            if (!('IntersectionObserver' in window)) {
-                fills.forEach(f => f.classList.add('is-animated'));
-                return;
-            }
-            const barObserver = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-animated');
-                            barObserver.unobserve(entry.target);
-                        }
-                    });
-                },
-                { threshold: 0.5 }
-            );
-            fills.forEach(f => barObserver.observe(f));
-        })();
-    </script>
+    <!-- Script principal del portafolio -->
+    <script src="js/main.js"></script>
 
 </body>
 

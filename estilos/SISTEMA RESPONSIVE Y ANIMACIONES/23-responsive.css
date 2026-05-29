@@ -164,14 +164,55 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
         gap: var(--space-sm);
     }
 
+    /* — Formulario — */
     .form-actions {
         flex-direction: column;
     }
 
     .form-submit-btn {
         min-width: 100%;
+        min-height: 48px;                     /* FIX: área táctil cómoda */
+        touch-action: manipulation;           /* FIX: evita delay en tap */
+        -webkit-tap-highlight-color: transparent;
     }
 
+    .form-reset-btn {
+        min-height: 48px;                     /* FIX: área táctil cómoda */
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* FIX: evitar zoom automático en iOS (requiere font-size >= 16px) */
+    .form-field__input,
+    .form-field__input--textarea,
+    .form-field__input--select,
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+        font-size: 16px;
+    }
+
+    /* — Contacto directo — */
+    /* FIX: área de toque mínima 44px en links de contacto */
+    .contacto__channel-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        pointer-events: auto;
+        position: relative;
+        z-index: 5;
+    }
+
+    /* — Tabla de Bitácora — */
+    /* FIX: ancho mínimo para forzar scroll horizontal táctil */
+    .bitacora table,
+    .content-section table {
+        min-width: 540px;
+        display: table;
+    }
+
+    /* — Multimedia — */
     .multimedia__card-inner {
         padding: var(--space-md);
     }
@@ -209,6 +250,7 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
         gap: 4px;
     }
 
+    /* — Footer — */
     .site-footer__university {
         margin-top: var(--space-sm);
         padding-top: var(--space-xs);
@@ -223,12 +265,10 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
     }
 
     @keyframes floatLogo {
-
         0%,
         100% {
             transform: translateY(0);
         }
-
         50% {
             transform: translateY(-3px);
         }
