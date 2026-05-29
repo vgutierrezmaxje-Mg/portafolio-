@@ -1,0 +1,57 @@
+/*
+Botón hamburguesa (.btn-mobile-menu) + 
+overlay sidebar (.sidebar-overlay, .sidebar-overlay--visible)
+*/
+
+/* ===================================================================
+   20. BOTÓN HAMBURGUESA (Mobile Menu Toggle)
+   =================================================================== */
+
+.btn-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 600;
+    width: 48px;
+    height: 48px;
+    background: var(--color-navy);
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(76, 161, 175, 0.30);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.30);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+}
+
+.btn-mobile-menu:hover {
+    background: var(--color-navy-mid);
+}
+
+.btn-mobile-menu__icon {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* ===================================================================
+   21. OVERLAY DE SIDEBAR (Mobile)
+   =================================================================== */
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 10, 25, 0.70);
+    z-index: 490;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.sidebar-overlay--visible {
+    opacity: 1;
+}

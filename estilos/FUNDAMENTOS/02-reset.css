@@ -1,0 +1,142 @@
+/*
+Reset universal + base (*, html, body, img, a, ul, button, headings, figure, hr, 
+:focus-visible, scrollbar personalizada, code inline, skip-link)
+*/
+
+
+/* ===================================================================
+   02. RESET UNIVERSAL & BASE
+   =================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-primary);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video,
+audio {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-navy);
+}
+
+figure {
+    margin: 0;
+}
+
+hr {
+    border: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+/* — Scrollbar personalizada — */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 31, 63, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-accent), var(--color-navy));
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+
+
+/* ===================================================================
+   03. SKIP LINK — Accesibilidad WCAG 2.1 AA
+   =================================================================== */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 9999;
+    background: var(--color-accent);
+    color: var(--color-navy);
+    padding: 0.6rem 1.2rem;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ===================================================================
+   23. COMPONENTES GLOBALES ADICIONALES
+   =================================================================== */
+
+code {
+    background: rgba(76, 161, 175, 0.10);
+    color: #007a8a;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    font-weight: 600;
+    border: 1px solid rgba(76, 161, 175, 0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}

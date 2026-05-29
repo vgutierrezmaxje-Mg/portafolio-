@@ -1,0 +1,358 @@
+/*
+Galería multimedia — grid 2 col, multimedia__card 
+(inner, accent, header, icon, title-group, title, badge),
+ media-container, video-frame, video-overlay, video, audio-frame,
+ waveform + wave bars (nth-child 1–7) + @keyframes waveAnimation, audio, 
+ caption, caption-icon, duration, variante audio
+*/
+
+/* ===================================================================
+   16. GALERÍA MULTIMEDIA — Rediseño Premium Minimalista
+   =================================================================== */
+
+.multimedia__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    align-items: stretch;
+}
+
+/* — Card Base — Premium Glassmorphism Suave — */
+.multimedia__card {
+    position: relative;
+    background: var(--color-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow:
+        0 4px 12px rgba(0, 31, 63, 0.06),
+        0 8px 24px rgba(0, 31, 63, 0.04),
+        0 1px 3px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 31, 63, 0.06);
+    transition:
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.multimedia__card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 8px 20px rgba(0, 31, 63, 0.08),
+        0 16px 40px rgba(0, 31, 63, 0.06),
+        0 2px 6px rgba(76, 161, 175, 0.06);
+    border-color: rgba(76, 161, 175, 0.15);
+}
+
+.multimedia__card-inner {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* — Línea decorativa inferior sutil — */
+.multimedia__card-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(76, 161, 175, 0.4) 20%,
+            var(--color-accent) 50%,
+            rgba(76, 161, 175, 0.4) 80%,
+            transparent 100%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.multimedia__card:hover .multimedia__card-accent {
+    opacity: 1;
+}
+
+/* — Header de Card — */
+.multimedia__card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(0, 31, 63, 0.06);
+}
+
+.multimedia__card-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(76, 161, 175, 0.12) 0%, rgba(76, 161, 175, 0.06) 100%);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(76, 161, 175, 0.15);
+    flex-shrink: 0;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.multimedia__card-icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-accent);
+    transition: color 0.3s ease;
+}
+
+.multimedia__card:hover .multimedia__card-icon {
+    background: linear-gradient(135deg, rgba(76, 161, 175, 0.18) 0%, rgba(76, 161, 175, 0.10) 100%);
+    border-color: rgba(76, 161, 175, 0.25);
+    transform: scale(1.05);
+}
+
+.multimedia__card-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.multimedia__card-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.multimedia__card-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    background: rgba(76, 161, 175, 0.08);
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid rgba(76, 161, 175, 0.12);
+}
+
+/* — Contenedor de Medios — */
+.multimedia__media-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    flex: 1;
+}
+
+/* — Video Frame — Diseño Premium Controlado — */
+.multimedia__video-frame {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-navy-deep);
+    border: 1px solid rgba(76, 161, 175, 0.12);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.02),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Overlay decorativo muy sutil */
+.multimedia__video-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-md);
+    pointer-events: none;
+    box-shadow:
+        inset 0 0 0 1px rgba(76, 161, 175, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: box-shadow 0.35s ease;
+}
+
+.multimedia__card:hover .multimedia__video-overlay {
+    box-shadow:
+        inset 0 0 0 1px rgba(76, 161, 175, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.multimedia__video {
+    width: 100%;
+    max-height: 240px;
+    object-fit: contain;
+    display: block;
+    border-radius: var(--radius-md);
+    background: var(--color-navy-deep);
+    outline: none;
+}
+
+.multimedia__video:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* — Audio Frame — Diseño Elegante Integrado — */
+.multimedia__audio-frame {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, var(--color-navy-deep) 0%, #001830 100%);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(76, 161, 175, 0.12);
+    overflow: hidden;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.02),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* — Waveform Visualization — Premium minimalista — */
+.multimedia__waveform {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+    height: 70px;
+    padding: var(--space-md) var(--space-lg);
+    background: transparent;
+}
+
+.multimedia__wave {
+    width: 4px;
+    background: linear-gradient(180deg, var(--color-accent) 0%, rgba(76, 161, 175, 0.5) 100%);
+    border-radius: var(--radius-full);
+    animation: waveAnimation 1.4s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.multimedia__wave:nth-child(1) {
+    height: 18px;
+    animation-delay: 0s;
+}
+
+.multimedia__wave:nth-child(2) {
+    height: 28px;
+    animation-delay: 0.1s;
+}
+
+.multimedia__wave:nth-child(3) {
+    height: 22px;
+    animation-delay: 0.2s;
+}
+
+.multimedia__wave:nth-child(4) {
+    height: 35px;
+    animation-delay: 0.25s;
+}
+
+.multimedia__wave:nth-child(5) {
+    height: 24px;
+    animation-delay: 0.35s;
+}
+
+.multimedia__wave:nth-child(6) {
+    height: 30px;
+    animation-delay: 0.45s;
+}
+
+.multimedia__wave:nth-child(7) {
+    height: 20px;
+    animation-delay: 0.55s;
+}
+
+@keyframes waveAnimation {
+
+    0%,
+    100% {
+        transform: scaleY(0.5);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scaleY(1);
+        opacity: 0.85;
+    }
+}
+
+.multimedia__audio {
+    width: 100%;
+    height: 48px;
+    display: block;
+    outline: none;
+    border-radius: 0;
+    background: rgba(0, 15, 36, 0.6);
+}
+
+.multimedia__audio:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+}
+
+/* — Caption — Elegante y Limpio — */
+.multimedia__caption {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    padding: var(--space-sm) 0;
+    margin-top: auto;
+    position: relative;
+}
+
+.multimedia__caption::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-accent) 0%, rgba(76, 161, 175, 0.2) 100%);
+    border-radius: var(--radius-full);
+    opacity: 0.6;
+}
+
+.multimedia__caption {
+    padding-left: var(--space-md);
+}
+
+.multimedia__caption-icon {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    color: var(--color-accent);
+    opacity: 0.6;
+    margin-top: 1px;
+}
+
+.multimedia__caption-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.multimedia__duration {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+    padding-left: var(--space-sm);
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+/* — Variante Audio — Ajustes específicos — */
+.multimedia__media-container--audio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}

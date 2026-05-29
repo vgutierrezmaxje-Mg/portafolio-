@@ -1,0 +1,252 @@
+/*
+Problemas que puedo resolver + Mini Dashboard técnico — problema-card
+ (::before, hover, highlight, icon-wrap, title, desc, features), 
+ dashboard__grid, dashboard-card (::after, hover, icon, value, label, 
+                                    sublabel)
+*/
+
+/* ===================================================================
+   SECCIÓN: PROBLEMAS QUE PUEDO RESOLVER
+   Cards premium con iconos minimalistas y diseño corporativo
+   =================================================================== */
+
+.problemas__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+}
+
+.problema-card {
+    background: var(--color-card);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 31, 63, 0.06);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.40s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.40s ease,
+        border-color 0.30s ease;
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.problema-card.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.problema-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-navy-mid));
+    opacity: 0;
+    transition: opacity 0.30s ease;
+}
+
+.problema-card:hover::before {
+    opacity: 1;
+}
+
+.problema-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(76, 161, 175, 0.20);
+}
+
+.problema-card--highlight {
+    border-color: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-card) 0%, rgba(76, 161, 175, 0.03) 100%);
+}
+
+.problema-card--highlight::before {
+    opacity: 1;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-bright));
+}
+
+.problema-card__icon-wrap {
+    width: 52px;
+    height: 52px;
+    background: var(--color-accent-soft);
+    border: 1px solid rgba(76, 161, 175, 0.20);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+    color: var(--color-accent);
+    transition: var(--transition-cubic);
+}
+
+.problema-card:hover .problema-card__icon-wrap {
+    background: var(--color-accent);
+    color: #ffffff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(76, 161, 175, 0.30);
+}
+
+.problema-card__icon-wrap svg {
+    width: 26px;
+    height: 26px;
+}
+
+.problema-card__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.01em;
+}
+
+.problema-card__desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+}
+
+.problema-card__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(0, 31, 63, 0.06);
+}
+
+.problema-card__features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.problema-card__features li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+/* ===================================================================
+   SECCIÓN: MINI DASHBOARD TÉCNICO
+   Indicadores de ingeniería con diseño limpio y corporativo
+   =================================================================== */
+
+.dashboard__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+}
+
+.dashboard-card {
+    background: var(--color-card);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 31, 63, 0.06);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.40s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.40s ease,
+        border-color 0.30s ease;
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.dashboard-card.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dashboard-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    opacity: 0;
+    transition: opacity 0.30s ease, width 0.30s ease;
+}
+
+.dashboard-card:hover::after {
+    opacity: 1;
+    width: 80%;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(76, 161, 175, 0.20);
+}
+
+.dashboard-card__icon {
+    width: 44px;
+    height: 44px;
+    background: var(--color-accent-soft);
+    border: 1px solid rgba(76, 161, 175, 0.15);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+    color: var(--color-accent);
+    transition: var(--transition-cubic);
+}
+
+.dashboard-card:hover .dashboard-card__icon {
+    background: var(--color-accent);
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(76, 161, 175, 0.30);
+}
+
+.dashboard-card__icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.dashboard-card__value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dashboard-card__label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: var(--space-xs);
+    letter-spacing: 0.01em;
+}
+
+.dashboard-card__sublabel {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 400;
+}

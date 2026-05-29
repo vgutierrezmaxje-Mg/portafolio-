@@ -1,0 +1,268 @@
+/*
+Site footer — fondo degradado navy, inner grid 3 col, brand, name, role, 
+footer__nav, credits, copyright, university logo 
+(container, logo-glow, logo-img, @keyframes floatLogo), 
+botones sociales expandibles (.boton, .icono, variantes nth-child por red social, .contacto wrapper)
+*/
+
+/* ===================================================================
+   19. SITE FOOTER — Punto 12: Footer High-End Enterprise
+   =================================================================== */
+
+.site-footer {
+    background: linear-gradient(135deg, var(--color-navy-deep) 0%, var(--color-navy) 100%);
+    color: rgba(255, 255, 255, 0.60);
+    padding: 1.5rem clamp(1.5rem, 3vw, 3rem) 1rem;
+    border-top: 1px solid rgba(76, 161, 175, 0.18);
+    margin-top: 0;
+}
+
+.site-footer__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-md);
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.site-footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.site-footer__name {
+    font-family: var(--font-display);
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.site-footer__role {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.4;
+}
+
+.site-footer__nav {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.site-footer__nav a {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.50);
+    font-weight: 500;
+    transition: var(--transition-fast);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+}
+
+.site-footer__nav a:hover {
+    color: var(--color-accent);
+}
+
+.site-footer__credits {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.site-footer__credits p {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.38);
+    line-height: 1.4;
+}
+
+.site-footer__credits strong {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+}
+
+.site-footer__copyright {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.28);
+    margin-top: 4px;
+}
+
+/* — Logo Universidad — Premium Floating Effect — */
+.site-footer__university {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: var(--space-sm);
+    padding-top: 0;
+}
+
+.site-footer__logo-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(76, 161, 175, 0.12);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.site-footer__logo-container:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(76, 161, 175, 0.22);
+    box-shadow:
+        0 4px 16px rgba(76, 161, 175, 0.08),
+        0 0 0 1px rgba(76, 161, 175, 0.05);
+}
+
+.site-footer__logo-img {
+    width: 100px;
+    height: auto;
+    max-height: 50px;
+    object-fit: contain;
+    opacity: 0.75;
+    filter:
+        grayscale(15%) brightness(1.05) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+    transition:
+        opacity 0.35s ease,
+        filter 0.35s ease,
+        transform 0.35s ease;
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+.site-footer__logo-container:hover .site-footer__logo-img {
+    opacity: 0.92;
+    filter:
+        grayscale(0%) brightness(1.1) drop-shadow(0 4px 12px rgba(76, 161, 175, 0.20));
+}
+
+/* — Glow sutil decorativo — */
+.site-footer__logo-glow {
+    position: absolute;
+    inset: -6px;
+    background: radial-gradient(ellipse at center,
+            rgba(76, 161, 175, 0.08) 0%,
+            transparent 70%);
+    border-radius: var(--radius-lg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.site-footer__logo-container:hover .site-footer__logo-glow {
+    opacity: 1;
+}
+
+/* — Animacion flotante premium — */
+@keyframes floatLogo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+        /* REDUCIDO: de -4px a -3px */
+    }
+}
+
+/* — Punto 12: Botones expansivos flotantes de redes sociales — */
+.site-footer__social-float {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.boton {
+    display: flex;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    overflow: hidden;
+    background: rgba(0, 31, 63, 0.85);
+    border-radius: var(--radius-full);
+    transition:
+        width 0.50s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+    border: 1px solid rgba(76, 161, 175, 0.25);
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.boton .icono {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.boton img {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.30));
+    transition: transform 0.35s ease;
+}
+
+.boton>span {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-left: 8px;
+    padding-right: 16px;
+    opacity: 0;
+    transition: opacity 0.30s ease 0.10s;
+    white-space: nowrap;
+}
+
+.boton:hover {
+    width: 155px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.40);
+}
+
+.boton:hover img {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.boton:hover>span {
+    opacity: 1;
+}
+
+/* Colores exactos por red social */
+.boton:nth-child(1):hover {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-color: #25D366;
+}
+
+.boton:nth-child(2):hover {
+    background: linear-gradient(135deg, #E1306C, #833AB4, #F77737);
+    border-color: #E1306C;
+}
+
+.boton:nth-child(3):hover {
+    background: linear-gradient(135deg, #1877F2, #0D47A1);
+    border-color: #1877F2;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}

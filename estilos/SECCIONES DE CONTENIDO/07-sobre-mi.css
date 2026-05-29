@@ -1,0 +1,147 @@
+/*
+Sobre mí — premium-card, bio, bio-header, bio-tag, intro, párrafos, 
+bio-pills, métricas (metric-card, value, label)
+*/
+
+/* ===================================================================
+   09. SOBRE MÍ — Punto 3: Saneamiento visual y Card Premium
+   =================================================================== */
+
+.sobre-mi__premium-card {
+    background: var(--color-card);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-card-premium);
+    border: 1px solid rgba(0, 31, 63, 0.06);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+}
+
+.sobre-mi__bio {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.sobre-mi__bio-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.sobre-mi__bio-tag {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    border: 1px solid rgba(76, 161, 175, 0.25);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.sobre-mi__intro {
+    font-size: var(--font-size-lg);
+    color: var(--color-navy);
+    line-height: 1.75;
+    font-weight: 500;
+}
+
+.sobre-mi__bio p {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+}
+
+.sobre-mi__bio p:last-of-type {
+    margin-bottom: 0;
+}
+
+.sobre-mi__bio strong {
+    color: var(--color-navy);
+    font-weight: 700;
+}
+
+.sobre-mi__bio em {
+    color: var(--color-accent);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.sobre-mi__bio-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.bio-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-card-alt);
+    border: 1px solid rgba(0, 31, 63, 0.08);
+    color: var(--color-text-secondary);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    transition: var(--transition-base);
+}
+
+.bio-pill:hover {
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.sobre-mi__metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-lg);
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(0, 31, 63, 0.08);
+}
+
+.metric-card {
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--color-card-alt);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 31, 63, 0.05);
+    transition: var(--transition-cubic);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.metric-card.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(76, 161, 175, 0.20);
+}
+
+.metric-card__value {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+}
+
+.metric-card__label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}

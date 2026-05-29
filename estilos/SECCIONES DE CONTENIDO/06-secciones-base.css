@@ -1,0 +1,62 @@
+/*
+Estructura común — .site-main, .content-section, 
+.content-section.is-revealed, .section-header (num, title, desc)
+*/
+
+/* ===================================================================
+   08. SECCIÓN PRINCIPAL — Estructura común de todas las secciones
+   =================================================================== */
+
+.site-main {
+    padding: 0;
+}
+
+.content-section {
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 3.5rem);
+    border-bottom: 1px solid rgba(0, 31, 63, 0.08);
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.80s ease var(--reveal-delay),
+        transform 0.80s ease var(--reveal-delay);
+}
+
+.content-section.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-header {
+    margin-bottom: var(--space-2xl);
+    position: relative;
+    padding-left: calc(var(--space-lg) + 4px);
+    border-left: 4px solid var(--color-accent);
+}
+
+.section-header__num {
+    display: block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.14em;
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-xs);
+}
+
+.section-header__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--color-navy);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-sm);
+}
+
+.section-header__desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 600px;
+}

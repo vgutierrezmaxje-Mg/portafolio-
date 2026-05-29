@@ -1,0 +1,94 @@
+/*
+Hobbies — carrusel infinito CSS puro, track + @keyframes scrollCarousel,
+ hover pause, hobby-card (special, figure, img hover, body, icon, label)
+*/
+
+/* ===================================================================
+   17. HOBBIES E INTERESES — Punto 5: Carrusel infinito CSS puro
+   =================================================================== */
+
+.hobbies-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: var(--space-lg) 0;
+    mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.hobbies-carousel__track {
+    display: flex;
+    gap: var(--space-lg);
+    animation: scrollCarousel 40s linear infinite;
+    width: max-content;
+}
+
+@keyframes scrollCarousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.hobbies-carousel:hover .hobbies-carousel__track {
+    animation-play-state: paused;
+}
+
+.hobby-card {
+    flex-shrink: 0;
+    width: 200px;
+    background: var(--color-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 31, 63, 0.06);
+    transition: var(--transition-cubic);
+}
+
+.hobby-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.hobby-card--special {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md), 0 0 0 2px var(--color-accent-soft);
+}
+
+.hobby-card__figure {
+    height: 120px;
+    overflow: hidden;
+}
+
+.hobby-card__figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hobby-card:hover .hobby-card__figure img {
+    transform: scale(1.10);
+}
+
+.hobby-card__body {
+    padding: var(--space-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.hobby-card__icon {
+    font-size: 1.5rem;
+}
+
+.hobby-card__label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}

@@ -1,0 +1,60 @@
+/*
+Scroll reveal — estado inicial pre-reveal para project-card, 
+article-card, metric-card, timeline__entry, meta-card, 
+formacion-card (opacity:0 + transform) + estado .is-revealed + 
+componente global code
+*/
+
+/* ===================================================================
+   22. SCROLL REVEAL — Animación de entrada
+   =================================================================== */
+
+/* ─── SCROLL REVEAL — Estado inicial (pre-reveal) ───────────────
+   BUG #3 CORREGIDO: La transition incluye ahora box-shadow y
+   border-color para que el hover post-reveal funcione con la
+   curva física de la Sec.13 sin propiedades huérfanas.
+   El transform reveal (24px → 0) y el hover transform (-7px)
+   coexisten gracias a que .is-revealed fija la base en 0.
+───────────────────────────────────────────────────────────────── */
+.project-card,
+.article-card,
+.metric-card,
+.timeline__entry,
+.meta-card,
+.formacion-card {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.70s ease var(--reveal-delay),
+        transform 0.70s ease var(--reveal-delay),
+        box-shadow 0.40s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.40s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card.is-revealed,
+.article-card.is-revealed,
+.metric-card.is-revealed,
+.timeline__entry.is-revealed,
+.meta-card.is-revealed,
+.formacion-card.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ===================================================================
+   23. COMPONENTES GLOBALES ADICIONALES
+   =================================================================== */
+
+code {
+    background: rgba(76, 161, 175, 0.10);
+    color: #007a8a;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    font-weight: 600;
+    border: 1px solid rgba(76, 161, 175, 0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}

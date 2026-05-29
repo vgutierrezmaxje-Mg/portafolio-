@@ -1,0 +1,33 @@
+/*
+Layout maestro — shell de dos columnas grid + 
+columna de contenido (.layout-shell, .content-column)
+*/
+
+/* ===================================================================
+   04. LAYOUT MAESTRO — SHELL DE DOS COLUMNAS (GRID)
+   Punto 1: Arquitectura del layout asimétrico (Desktop >= 1024px)
+   =================================================================== */
+
+.layout-shell {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: 1fr;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ===================================================================
+   06. COLUMNA DE CONTENIDO (content-column)
+   Punto 1: Panel derecho con scroll independiente
+   =================================================================== */
+
+.content-column {
+    grid-column: 2 / -1;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--color-bg-main);
+    scroll-behavior: smooth;
+    position: relative;
+}

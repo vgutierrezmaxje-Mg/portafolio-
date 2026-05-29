@@ -1,0 +1,126 @@
+/*
+Stack técnico — grid, stack__category, category-title, category-icon, 
+skills-list, skill-item (header, name, level, variantes mid/low/basic, 
+                         bar, fill, fill::after, is-animated)
+*/
+
+/* ===================================================================
+   12. STACK TÉCNICO — Punto 6: Badges de nivel
+   =================================================================== */
+
+.stack__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+}
+
+.stack__category {
+    background: var(--color-card);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 31, 63, 0.06);
+}
+
+.stack__category-title {
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid rgba(76, 161, 175, 0.18);
+}
+
+.stack__category-icon {
+    font-size: var(--font-size-xl);
+}
+
+.stack__skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-sm);
+}
+
+.skill-item__name {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.skill-item__level {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    white-space: nowrap;
+    font-family: var(--font-mono);
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.03em;
+}
+
+.skill-item__level--mid {
+    color: #4caf50;
+    background: rgba(76, 175, 80, 0.10);
+    border: 1px solid rgba(76, 175, 80, 0.25);
+}
+
+.skill-item__level--low {
+    color: #ff9800;
+    background: rgba(255, 152, 0, 0.10);
+    border: 1px solid rgba(255, 152, 0, 0.25);
+}
+
+.skill-item__level--basic {
+    color: var(--color-text-muted);
+    background: rgba(100, 116, 139, 0.10);
+    border: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+.skill-item__bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 31, 63, 0.08);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.skill-item__fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--color-navy), var(--color-accent));
+    border-radius: var(--radius-full);
+    transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+}
+
+.skill-item__fill.is-animated {
+    width: var(--skill-pct);
+}
+
+.skill-item__fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--color-accent-glow);
+}

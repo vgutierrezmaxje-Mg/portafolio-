@@ -1,0 +1,467 @@
+/*
+Media queries completas — desktop ≥1024px (ocultar hamburguesa),
+ <1023px (layout 1 col, sidebar slide, btn-menu, hero 1 col, footer),
+ <767px (secciones, grids, modales, timeline, form), 
+ <479px (hero, badges, carrusel, proyectos, multimedia, footer logo) + 
+ responsive de problemas y dashboard (<768px y <480px)
+*/
+
+/* ===================================================================
+   25. MEDIA QUERIES — RESPONSIVIDAD MOBILE FIRST
+   =================================================================== */
+
+/* ---- Desktop >= 1024px (diseño original) ---- */
+@media (min-width: 1024px) {
+    .btn-mobile-menu {
+        display: none !important;
+    }
+}
+
+/* ---- Tablet grande / Desktop pequeño (< 1024px) ---- */
+@media (max-width: 1023px) {
+    .layout-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+        z-index: 510;
+    }
+
+    .sidebar--open {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay {
+        display: block;
+    }
+
+    .content-column {
+        grid-column: 1 / -1;
+        overflow-x: hidden;
+    }
+
+    .btn-mobile-menu {
+        display: flex !important;
+    }
+
+    .site-header {
+        padding-top: clamp(3.5rem, 10vw, 5rem);
+        padding-left: 5rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .hero__portrait {
+        grid-column: 1;
+        grid-row: auto;
+        justify-self: start;
+    }
+
+    .hero__portrait-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .site-footer__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-lg);
+    }
+
+    .site-footer__credits {
+        text-align: center;
+    }
+
+    .site-footer__university {
+        justify-content: center;
+        margin-top: var(--space-md);
+    }
+
+    .site-footer__logo-img {
+        width: 80px;
+    }
+
+    .contacto__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto__info {
+        position: static;
+    }
+
+    .articles__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .multimedia__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .multimedia__video {
+        max-height: 280px;
+    }
+}
+
+/* ---- Tablet (< 768px) ---- */
+@media (max-width: 767px) {
+    .content-section {
+        padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .sobre-mi__metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metas__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects__filter-bar {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 0.70rem;
+    }
+
+    .code-modal,
+    .demo-modal {
+        width: 98%;
+        max-height: 95vh;
+        border-radius: var(--radius-md);
+    }
+
+    .stack__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .formacion__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding-left: 2rem;
+    }
+
+    .timeline__entry {
+        padding-bottom: var(--space-lg);
+    }
+
+    .site-footer__nav {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-submit-btn {
+        min-width: 100%;
+    }
+
+    .multimedia__card-inner {
+        padding: var(--space-md);
+    }
+
+    .multimedia__card-header {
+        margin-bottom: var(--space-md);
+        padding-bottom: var(--space-sm);
+    }
+
+    .multimedia__card-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .multimedia__card-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .multimedia__card-title {
+        font-size: var(--font-size-md);
+    }
+
+    .multimedia__video {
+        max-height: 220px;
+    }
+
+    .multimedia__waveform {
+        height: 60px;
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .multimedia__wave {
+        width: 3px;
+        gap: 4px;
+    }
+
+    .site-footer__university {
+        margin-top: var(--space-sm);
+        padding-top: var(--space-xs);
+    }
+
+    .site-footer__logo-container {
+        padding: 8px 12px;
+    }
+
+    .site-footer__logo-img {
+        width: 70px;
+    }
+
+    @keyframes floatLogo {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-3px);
+        }
+    }
+}
+
+/* ---- Mobile (< 480px) ---- */
+@media (max-width: 479px) {
+    .site-header {
+        padding-top: 4.5rem;
+    }
+
+    .hero__name {
+        font-size: 1.6rem;
+    }
+
+    .hero__stack {
+        gap: 6px;
+    }
+
+    .tech-badge {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+    }
+
+    .sobre-mi__metrics {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-md);
+    }
+
+    .hobbies-carousel__track {
+        animation-duration: 30s;
+    }
+
+    .hobby-card {
+        width: 160px;
+    }
+
+    .hobby-card__figure {
+        height: 100px;
+    }
+
+    .projects__filter-bar {
+        gap: 6px;
+    }
+
+    .project-card__badges {
+        gap: 4px;
+    }
+
+    .project-card__tech-badge {
+        font-size: 0.60rem;
+        padding: 3px 8px;
+    }
+
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 0.70rem;
+    }
+
+    .btn-mobile-menu {
+        width: 44px;
+        height: 44px;
+        top: 0.75rem;
+        left: 0.75rem;
+    }
+
+    .site-footer {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .multimedia__grid {
+        gap: var(--space-md);
+    }
+
+    .multimedia__card-inner {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .multimedia__card-header {
+        gap: var(--space-sm);
+    }
+
+    .multimedia__card-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .multimedia__card-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .multimedia__card-title {
+        font-size: var(--font-size-sm);
+    }
+
+    .multimedia__card-badge {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+
+    .multimedia__video {
+        max-height: 180px;
+    }
+
+    .multimedia__waveform {
+        height: 50px;
+        gap: 4px;
+    }
+
+    .multimedia__wave {
+        width: 3px;
+    }
+
+    .multimedia__audio {
+        height: 44px;
+    }
+
+    .multimedia__caption {
+        font-size: 0.7rem;
+        flex-wrap: wrap;
+    }
+
+    .multimedia__duration {
+        width: 100%;
+        margin-left: 0;
+        margin-top: var(--space-xs);
+        padding-left: 0;
+        justify-content: flex-start;
+    }
+
+    .site-footer__logo-img {
+        width: 60px;
+    }
+
+    .site-footer__logo-container {
+        padding: 6px 10px;
+    }
+}
+
+/* ===================================================================
+   RESPONSIVE: PROBLEMAS Y DASHBOARD
+   =================================================================== */
+
+@media (max-width: 768px) {
+    .problemas__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .problema-card {
+        padding: var(--space-lg);
+    }
+
+    .problema-card__icon-wrap {
+        width: 44px;
+        height: 44px;
+        margin-bottom: var(--space-md);
+    }
+
+    .problema-card__icon-wrap svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .problema-card__title {
+        font-size: var(--font-size-md);
+    }
+
+    .dashboard__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .dashboard-card {
+        padding: var(--space-lg);
+    }
+
+    .dashboard-card__value {
+        font-size: 1.8rem;
+    }
+
+    .dashboard-card__icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .dashboard-card__icon svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .problemas__grid {
+        gap: var(--space-md);
+    }
+
+    .problema-card {
+        padding: var(--space-md);
+    }
+
+    .problema-card__features {
+        gap: 6px;
+    }
+
+    .dashboard__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .dashboard-card {
+        padding: var(--space-md);
+    }
+
+    .dashboard-card__value {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-card__label {
+        font-size: var(--font-size-xs);
+    }
+
+    .dashboard-card__sublabel {
+        font-size: 0.65rem;
+    }
+}
+
+
+/* ===================================================================
+   FIN DEL ARCHIVO estilosMejora.css
+   Portafolio — Max Jefferson Valladolid Gutierrez © 2026
+   CSS3 Nativo | Sin frameworks | Arquitectura Sidebar + Main
+   Versión: 3.0 ELITE
+   =================================================================== */

@@ -1,0 +1,38 @@
+/* ===============================================
+   — FUNDAMENTOS —
+   =============================================== */
+@import 'estilos/FUNDAMENTOS/01-variables.css';
+@import 'estilos/FUNDAMENTOS/02-reset.css';
+
+/* ==================================================
+   — ESTRUCTURA MAESTRA —
+   ==================================================*/
+@import 'estilos/ESTRUCTURA MAESTRA/03-layout.css';
+@import 'estilos/ESTRUCTURA MAESTRA/04-sidebar.css';
+@import 'estilos/ESTRUCTURA MAESTRA/05-hero.css';
+
+/* ==============================================================
+   — SECCIONES DE CONTENIDO —
+   ============================================================== */
+@import 'estilos/SECCIONES DE CONTENIDO/06-secciones-base.css';
+@import 'estilos/SECCIONES DE CONTENIDO/07-sobre-mi.css';
+@import 'estilos/SECCIONES DE CONTENIDO/08-formacion.css';
+@import 'estilos/SECCIONES DE CONTENIDO/09-metas.css';
+@import 'estilos/SECCIONES DE CONTENIDO/10-stack.css';
+@import 'estilos/SECCIONES DE CONTENIDO/11-proyectos.css';
+@import 'estilos/SECCIONES DE CONTENIDO/12-modales.css';
+@import 'estilos/SECCIONES DE CONTENIDO/13-articulos.css';
+@import 'estilos/SECCIONES DE CONTENIDO/14-bitacora.css';
+@import 'estilos/SECCIONES DE CONTENIDO/15-multimedia.css';
+@import 'estilos/SECCIONES DE CONTENIDO/16-hobbies.css';
+@import 'estilos/SECCIONES DE CONTENIDO/17-contacto.css';
+@import 'estilos/SECCIONES DE CONTENIDO/18-footer.css';
+@import 'estilos/SECCIONES DE CONTENIDO/19-problemas.css';
+
+/* =======================================================================
+   — SISTEMA RESPONSIVE Y ANIMACIONES —
+   =======================================================================*/
+@import 'estilos/SISTEMA RESPONSIVE Y ANIMACIONES/20-mobile.css';
+@import 'estilos/SISTEMA RESPONSIVE Y ANIMACIONES/21-scroll-reveal.css';
+@import 'estilos/SISTEMA RESPONSIVE Y ANIMACIONES/22-animaciones.css';
+@import 'estilos/SISTEMA RESPONSIVE Y ANIMACIONES/23-responsive.css';
