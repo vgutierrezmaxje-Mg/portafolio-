@@ -4,9 +4,9 @@ clases de entrada del hero (hero__meta, hero__identity, hero__portrait,
                             hero__stack, hero__cta-group con delays)
 */
 
-/* ===================================================================
+/* ===================================
    24. ANIMACIONES GLOBALES
-   =================================================================== */
+   =================================== */
 
 @keyframes fadeInDown {
     from {

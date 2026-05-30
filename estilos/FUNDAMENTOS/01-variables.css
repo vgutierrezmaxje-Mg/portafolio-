@@ -10,7 +10,7 @@ Variables corporativas & custom properties —
    =================================================================== */
 
 :root {
-    /* — Paleta Cromática Corporativa — */
+    /* Paleta Cromática Corporativa */
     --color-navy: #001f3f;
     --color-navy-deep: #000f24;
     --color-navy-mid: #002d5c;
@@ -20,31 +20,31 @@ Variables corporativas & custom properties —
     --color-accent-mid: #3a8d9a;
     --color-accent-bright: #5ec4d4;
 
-    /* — Fondos — */
+    /* Fondos */
     --color-bg-main: #f1f5f9;
     --color-bg-body: #eef2f7;
     --color-card: #ffffff;
     --color-card-alt: #f8fafc;
 
-    /* — Texto (Paleta para legibilidad absoluta) — */
+    /* Texto (Paleta para legibilidad absoluta) */
     --color-text-primary: #0f172a;
     --color-text-secondary: #334155;
     --color-text-muted: #475569;
     --color-text-light: #64748b;
 
-    /* — Sidebar — */
+    /* Sidebar */
     --sidebar-width: 300px;
     --sidebar-bg: linear-gradient(180deg, #001628 0%, #001f3f 60%, #002a55 100%);
     --sidebar-border: rgba(76, 161, 175, 0.18);
 
-    /* — Bordes y radios — */
+    /* Bordes y radios */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
     --radius-full: 9999px;
 
-    /* — Sombras Multicapa Tridimensionales — */
+    /* Sombras Multicapa Tridimensionales */
     --shadow-sm:
         0 1px 2px rgba(0, 31, 63, 0.04),
         0 2px 4px rgba(0, 31, 63, 0.06);
@@ -76,14 +76,14 @@ Variables corporativas & custom properties —
         0 0 40px rgba(76, 161, 175, 0.15),
         0 0 60px rgba(76, 161, 175, 0.08);
 
-    /* — Transiciones — */
+    /* Transiciones */
     --transition-fast: all 0.18s ease;
     --transition-base: all 0.30s ease;
     --transition-slow: all 0.50s cubic-bezier(0.165, 0.84, 0.44, 1);
     --transition-cubic: all 0.40s cubic-bezier(0.34, 1.56, 0.64, 1);
     --transition-elastic: all 0.50s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    /* — Tipografía — */
+    /* Tipografía */
     --font-display: 'DM Serif Display', Georgia, serif;
     --font-body: 'DM Sans', 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', 'Consolas', monospace;
@@ -95,7 +95,7 @@ Variables corporativas & custom properties —
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 2rem;
 
-    /* — Espaciado — */
+    /* Espaciado */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
@@ -104,6 +104,6 @@ Variables corporativas & custom properties —
     --space-2xl: 3rem;
     --space-3xl: 4rem;
 
-    /* — Scroll Reveal — */
+    /* Scroll Reveal */
     --reveal-delay: 0ms;
 }

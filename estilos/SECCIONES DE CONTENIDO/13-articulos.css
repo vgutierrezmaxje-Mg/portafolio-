@@ -4,9 +4,9 @@ category-badge, articles__list, article-card
 (figure, body, topic, title, abstract, link), articles__see-more
 */
 
-/* ===================================================================
-   14. ARTÍCULOS Y PUBLICACIONES — Punto 8: Grid 3 columnas estricto
-   =================================================================== */
+/* =========================================
+   14. ARTÍCULOS Y PUBLICACIONES 
+   ========================================= */
 
 .articles__grid {
     display: grid;

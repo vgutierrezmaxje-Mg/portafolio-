@@ -6,41 +6,9 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
                             métricas expandidas, footer, action-btns, placeholder)
 */
 
-/* ===================================================================
-   13. PROYECTOS DE INGENIERÍA — ARQUITECTURA DEFINITIVA v3
-   
-   PROBLEMA RAÍZ RESUELTO:
-   El conflicto entre simetría base (tarjetas iguales en altura)
-   y expansión independiente (details sin afectar vecinas) se
-   resuelve con la siguiente arquitectura de 3 capas:
-
-   CAPA 1 — Grid con align-items:stretch + grid-template-rows
-             Las tarjetas se estiran para igualar alturas en cada
-             fila. Esto da simetría perfecta en estado cerrado.
-
-   CAPA 2 — Cada .project-card es flex-column con un "inner shell"
-             que contiene header + body-fijo + footer. El <details>
-             vive FUERA de ese shell, como último hijo de la tarjeta,
-             para que su expansión no estire el shell base.
-
-   CAPA 3 — El <details> abierto empuja la tarjeta hacia abajo
-             SIN afectar vecinas porque usamos align-items:start
-             en el grid mediante una clase toggle por JS mínimo,
-             O — solución CSS pura — el details está en un wrapper
-             absoluto... pero eso requiere altura fija.
-
-   SOLUCIÓN FINAL PURA CSS (sin JS adicional, sin altura fija):
-   — align-items:start en el grid (expansión independiente)
-   — Las tarjetas tienen altura uniforme mediante min-height
-     calculado con clamp() para absorber variaciones de contenido
-   — El body usa un truco de line-clamp en la descripción para
-     que todos tengan exactamente el mismo número de líneas,
-     garantizando alturas idénticas en estado cerrado.
-   — El placeholder usa la misma min-height base.
-=================================================================== */
-
-
-/* ─── BARRA DE FILTROS ─────────────────────────────────────────── */
+/* ================================================
+          13. PROYECTOS DE INGENIERÍA 
+   ================================================ */
 
 .projects__filter-bar {
     display: flex;
@@ -83,11 +51,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
 }
 
 
-/* ─── GRID MAESTRO ─────────────────────────────────────────────────
-   align-items:start es la ÚNICA forma de que una tarjeta expandida
-   no estire a sus vecinas de fila. La simetría de alturas base
-   se logra con min-height en la tarjeta + line-clamp en la desc.
-──────────────────────────────────────────────────────────────────── */
+/* GRID MAESTRO */
 
 .projects__grid {
     display: grid;
@@ -96,12 +60,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
 }
 
 
-/* ─── TARJETA BASE ─────────────────────────────────────────────────
-   min-height garantiza que todas las tarjetas, independientemente
-   de su contenido, tienen el mismo piso de altura en estado cerrado.
-   El valor 340px cubre: header(~60px) + body(~220px) + footer(~60px).
-   Ajusta este valor si cambias el tamaño de fuente o el padding.
-──────────────────────────────────────────────────────────────────── */
+/* TARJETA BASE */
 .project-card__wrapper {
     display: flex;
     align-items: flex-start;
@@ -125,7 +84,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
     will-change: transform;
 }
 
-/* REQUISITO 3 — Hover con curva física premium */
+/* Hover con curva física premium */
 .project-card:hover {
     transform: translateY(-8px) scale(1.01);
     box-shadow: var(--shadow-card-hover), var(--shadow-glow);
@@ -164,7 +123,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
 }
 
 
-/* ─── HEADER ───────────────────────────────────────────────────── */
+/* HEADER */
 
 .project-card__header {
     display: flex;
@@ -197,7 +156,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
     text-transform: uppercase;
 }
 
-/* — BADGES — */
+/* BADGES*/
 .project-card__tech-badge--sql {
     background: rgba(255, 193, 7, 0.12);
     color: #b8860b;
@@ -277,7 +236,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
     border: 1px solid rgba(33, 150, 243, 0.25);
 }
 
-/* — STATUS BADGE — */
+/* STATUS BADGE */
 .project-card__status-badge {
     font-size: 0.68rem;
     font-weight: 700;
@@ -302,13 +261,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
 }
 
 
-/* ─── BODY ─────────────────────────────────────────────────────────
-   flex:1 ocupa el espacio entre header y footer.
-   La descripción usa -webkit-line-clamp:3 para que todas las
-   tarjetas muestren exactamente 3 líneas de texto, garantizando
-   que el trigger "Métricas del proyecto" quede a la misma altura
-   en todas las tarjetas, independientemente del texto.
-──────────────────────────────────────────────────────────────────── */
+/* BODY */
 
 .project-card__body {
     flex: 1 1 auto;
@@ -338,12 +291,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
 }
 
 
-/* ─── DETAILS / SUMMARY ────────────────────────────────────────────
-   El <details> vive al final del body. margin-top:auto lo empuja
-   al fondo del flex body. Al abrirse, empuja el footer hacia abajo
-   SOLO dentro de esa tarjeta. Las vecinas no se ven afectadas
-   porque el grid tiene align-items:start.
-──────────────────────────────────────────────────────────────────── */
+/* DETAILS / SUMMARY */
 
 .project-card__details {
     flex-shrink: 0;
@@ -422,12 +370,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
 }
 
 
-/* ─── FOOTER ────────────────────────────────────────────────────────
-   margin-top:auto clava el footer al fondo.
-   IMPORTANTE: cuando el details está abierto, el footer baja con él
-   porque toda la tarjeta crece. Las tarjetas vecinas NO se ven
-   afectadas (align-items:start en el grid).
-──────────────────────────────────────────────────────────────────── */
+/* FOOTER */
 
 .project-card__footer {
     display: flex;
@@ -440,7 +383,7 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
 }
 
 
-/* ─── BOTONES ───────────────────────────────────────────────────── */
+/* BOTONES */
 
 .project-btn {
     display: inline-flex;
@@ -503,17 +446,13 @@ grid maestro, project-card (wrapper, hover, premium, border-gradient,
 }
 
 
-/* ─── PLACEHOLDER ───────────────────────────────────────────────────
-   SIMETRÍA GARANTIZADA: misma min-height que las tarjetas normales.
-   No usa header/body/footer — centra su contenido directamente.
-──────────────────────────────────────────────────────────────────── */
+/* PLACEHOLDER */
 
 .project-card--placeholder {
     border: 2px dashed rgba(0, 31, 63, 0.15);
     box-shadow: none;
     background: rgba(0, 31, 63, 0.02);
     min-height: 340px;
-    /* idéntico al min-height de .project-card */
     align-items: center;
     justify-content: center;
     transition:

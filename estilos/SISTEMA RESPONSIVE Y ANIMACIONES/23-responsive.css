@@ -6,18 +6,18 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
  responsive de problemas y dashboard (<768px y <480px)
 */
 
-/* ===================================================================
-   25. MEDIA QUERIES — RESPONSIVIDAD MOBILE FIRST
-   =================================================================== */
+/* =========================
+   25. MEDIA QUERIES 
+   =========================*/
 
-/* ---- Desktop >= 1024px (diseño original) ---- */
+/* Desktop >= 1024px (diseño original) */
 @media (min-width: 1024px) {
     .btn-mobile-menu {
         display: none !important;
     }
 }
 
-/* ---- Tablet grande / Desktop pequeño (< 1024px) ---- */
+/* Tablet grande / Desktop pequeño (< 1024px) */
 @media (max-width: 1023px) {
     .layout-shell {
         grid-template-columns: 1fr;
@@ -108,7 +108,7 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
     }
 }
 
-/* ---- Tablet (< 768px) ---- */
+/* Tablet (< 768px) */
 @media (max-width: 767px) {
     .content-section {
         padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem);
@@ -164,25 +164,24 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
         gap: var(--space-sm);
     }
 
-    /* — Formulario — */
+    /* Formulario */
     .form-actions {
         flex-direction: column;
     }
 
     .form-submit-btn {
         min-width: 100%;
-        min-height: 48px;                     /* FIX: área táctil cómoda */
-        touch-action: manipulation;           /* FIX: evita delay en tap */
+        min-height: 48px;                     
+        touch-action: manipulation;          
         -webkit-tap-highlight-color: transparent;
     }
 
     .form-reset-btn {
-        min-height: 48px;                     /* FIX: área táctil cómoda */
+        min-height: 48px;                     
         touch-action: manipulation;
         -webkit-tap-highlight-color: transparent;
     }
 
-    /* FIX: evitar zoom automático en iOS (requiere font-size >= 16px) */
     .form-field__input,
     .form-field__input--textarea,
     .form-field__input--select,
@@ -193,8 +192,7 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
         font-size: 16px;
     }
 
-    /* — Contacto directo — */
-    /* FIX: área de toque mínima 44px en links de contacto */
+    /* Contacto directo */
     .contacto__channel-link {
         display: inline-flex;
         align-items: center;
@@ -204,15 +202,14 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
         z-index: 5;
     }
 
-    /* — Tabla de Bitácora — */
-    /* FIX: ancho mínimo para forzar scroll horizontal táctil */
+    /* Tabla de Bitácora */
     .bitacora table,
     .content-section table {
         min-width: 540px;
         display: table;
     }
 
-    /* — Multimedia — */
+    /* Multimedia */
     .multimedia__card-inner {
         padding: var(--space-md);
     }
@@ -250,7 +247,7 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
         gap: 4px;
     }
 
-    /* — Footer — */
+    /* Footer */
     .site-footer__university {
         margin-top: var(--space-sm);
         padding-top: var(--space-xs);
@@ -275,7 +272,7 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
     }
 }
 
-/* ---- Mobile (< 480px) ---- */
+/*  Mobile (< 480px) */
 @media (max-width: 479px) {
     .site-header {
         padding-top: 4.5rem;
@@ -410,9 +407,9 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
     }
 }
 
-/* ===================================================================
+/* =====================================
    RESPONSIVE: PROBLEMAS Y DASHBOARD
-   =================================================================== */
+   =====================================*/
 
 @media (max-width: 768px) {
     .problemas__grid {
@@ -497,11 +494,3 @@ Media queries completas — desktop ≥1024px (ocultar hamburguesa),
         font-size: 0.65rem;
     }
 }
-
-
-/* ===================================================================
-   FIN DEL ARCHIVO estilosMejora.css
-   Portafolio — Max Jefferson Valladolid Gutierrez © 2026
-   CSS3 Nativo | Sin frameworks | Arquitectura Sidebar + Main
-   Versión: 3.0 ELITE
-   =================================================================== */

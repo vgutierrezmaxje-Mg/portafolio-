@@ -3,9 +3,9 @@ Botón hamburguesa (.btn-mobile-menu) +
 overlay sidebar (.sidebar-overlay, .sidebar-overlay--visible)
 */
 
-/* ===================================================================
-   20. BOTÓN HAMBURGUESA (Mobile Menu Toggle)
-   =================================================================== */
+/* ===============================
+   20. BOTÓN HAMBURGUESA 
+   =============================== */
 
 .btn-mobile-menu {
     display: none;
@@ -36,9 +36,9 @@ overlay sidebar (.sidebar-overlay, .sidebar-overlay--visible)
 }
 
 
-/* ===================================================================
+/* ======================================
    21. OVERLAY DE SIDEBAR (Mobile)
-   =================================================================== */
+   ====================================== */
 
 .sidebar-overlay {
     display: none;

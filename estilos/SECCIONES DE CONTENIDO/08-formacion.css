@@ -4,9 +4,9 @@ Formación académica — grid, formacion-card
 certs (formacion__certs, certs-list, cert-item)
 */
 
-/* ===================================================================
+/* ==============================
    10. FORMACIÓN ACADÉMICA
-   =================================================================== */
+   ==============================*/
 
 .formacion__grid {
     display: grid;

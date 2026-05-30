@@ -4,9 +4,9 @@ skills-list, skill-item (header, name, level, variantes mid/low/basic,
                          bar, fill, fill::after, is-animated)
 */
 
-/* ===================================================================
-   12. STACK TÉCNICO — Punto 6: Badges de nivel
-   =================================================================== */
+/* ==================================
+   12. STACK TÉCNICO 
+   ========================= */
 
 .stack__grid {
     display: grid;

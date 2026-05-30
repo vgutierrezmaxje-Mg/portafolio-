@@ -3,10 +3,9 @@ Sidebar completo — fondo, brand, avatar, ring, nombre, rol, status-dot,
 divider, nav categorías, nav links, estados active/hover, footer social, iconos sociales, copyright
 */
 
-/* ===================================================================
-   05. SIDEBAR — PANEL LATERAL IZQUIERDO FIJO (300px, 100vh)
-   Punto 1: Sidebar fijo con scroll bloqueado interno
-   =================================================================== */
+/* =================================================
+   05. SIDEBAR — PANEL LATERAL IZQUIERDO FIJO 
+   =================================================*/
 
 .sidebar {
     position: fixed;
@@ -47,7 +46,7 @@ divider, nav categorías, nav links, estados active/hover, footer social, iconos
     z-index: 1;
 }
 
-/* — Punto 2: Core Branding en Sidebar (Nombre + Perfil) — */
+/* Core Branding en Sidebar (Nombre + Perfil) */
 .sidebar__brand {
     display: flex;
     flex-direction: column;
@@ -159,7 +158,6 @@ divider, nav categorías, nav links, estados active/hover, footer social, iconos
     }
 }
 
-/* — Divider — */
 .sidebar__divider {
     width: calc(100% - var(--space-xl));
     height: 1px;
@@ -168,7 +166,7 @@ divider, nav categorías, nav links, estados active/hover, footer social, iconos
     flex-shrink: 0;
 }
 
-/* — Punto 6: Navegación del Sidebar por Categorías — */
+/* Navegación del Sidebar por Categorías */
 .sidebar__nav {
     flex: 1;
     padding: var(--space-md) 0;
@@ -279,7 +277,7 @@ divider, nav categorías, nav links, estados active/hover, footer social, iconos
     font-weight: 600;
 }
 
-/* — Sidebar Footer (Punto 12: Redes sociales con animaciones) — */
+/* Sidebar Footer (Redes sociales con animaciones)*/
 .sidebar__footer {
     padding: var(--space-sm) var(--space-sm) var(--space-lg);
     flex-shrink: 0;

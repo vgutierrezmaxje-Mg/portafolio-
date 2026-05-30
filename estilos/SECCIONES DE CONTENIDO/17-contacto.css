@@ -7,9 +7,9 @@ Hub de contacto — layout 2 col, contacto__info
   estados focus/filled, form-actions, form-submit-btn, form-success-msg
 */
 
-/* ===================================================================
-   18. HUB DE CONTACTO — Punto 11: Inputs con glow turquesa
-   =================================================================== */
+/* ===========================
+   18. HUB DE CONTACTO 
+   =========================== */
 
 .contacto__layout {
     display: grid;
@@ -214,7 +214,7 @@ Hub de contacto — layout 2 col, contacto__info
     border-radius: var(--radius-full);
 }
 
-/* Punto 11: Glow turquesa vibrante al :focus */
+/* Glow turquesa vibrante al :focus */
 .form-field__input:focus {
     border-color: var(--color-accent);
     background: #ffffff;

@@ -1,6 +1,6 @@
-/* ====================================================
+/* ========================================
            DATOS DE LOS PROYECTOS 
-        ==================================================== */
+        ===================================*/
 
 const projectsData = {
     1: {
@@ -237,10 +237,8 @@ const projectsData = {
                 <span class="code-modal__tab-name">${file.label}</span>
             `;
             tab.addEventListener('click', () => {
-                // Quitar activo de todas
                 tabsContainer.querySelectorAll('.code-modal__tab')
                     .forEach(t => t.classList.remove('code-modal__tab--active'));
-                // Activar la clickeada
                 tab.classList.add('code-modal__tab--active');
                 // Mostrar su código
                 renderCode(window[file.var] || `// ⚠ No se cargó: ${file.var}`);
@@ -256,13 +254,13 @@ const projectsData = {
 
             modalTitle.textContent = project.title;
 
-            // ── Proyecto con MÚLTIPLES archivos (pestañas) ──
+            // Proyecto con MÚLTIPLES archivos (pestañas) 
             if (project.codeVars && project.codeVars.length > 0) {
                 buildTabs(project.codeVars);
                 modalFilename.textContent = project.codeVars[0].label;
                 renderCode(window[project.codeVars[0].var] || '// Archivo no encontrado.');
 
-                // ── Proyecto con UN solo archivo ──
+                // Proyecto con UN solo archivo
             } else {
                 tabsContainer.innerHTML = `
                     <div class="code-modal__tab code-modal__tab--active">
@@ -315,7 +313,6 @@ const projectsData = {
         });
     });
 
-    // Cerrar modal
     closeBtn.addEventListener('click', () => modal.close());
     modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.close();
@@ -391,7 +388,7 @@ const projectsData = {
         }
     };
 
-    // 1. Contador dinámico de caracteres para el Textarea
+    // Contador dinámico de caracteres para el Textarea
     if (fields.mensaje.input && fields.mensaje.counter) {
         fields.mensaje.input.addEventListener('input', (e) => {
             const len = e.target.value.length;
@@ -403,7 +400,7 @@ const projectsData = {
         });
     }
 
-    // 2. Función clave para validar un solo campo
+    // Función clave para validar un solo campo
     function validarCampo(key) {
         const field = fields[key];
         const mensajeError = field.getMsg(field.input.value);
@@ -425,7 +422,7 @@ const projectsData = {
         }
     }
 
-    // 3. Agregar eventos en tiempo real (blur) para limpiar o alertar al salir del campo
+    // Agregar eventos en tiempo real para limpiar o alertar al salir del campo
     Object.keys(fields).forEach(key => {
         fields[key].input.addEventListener('blur', () => validarCampo(key));
         fields[key].input.addEventListener('input', () => {
@@ -436,7 +433,7 @@ const projectsData = {
         });
     });
 
-    // 4. Interceptamos el Submit (Enviar Mensaje)
+    // 4. Interceptamos el Submit 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -458,7 +455,7 @@ const projectsData = {
             return;
         }
 
-        // 5. Si todo está limpio, simula el envío exitoso con loader
+        // Si todo está limpio, simula el envío exitoso con loader
         submitBtn.disabled = true;
         submitBtn.classList.add('is-loading');
 
@@ -504,10 +501,6 @@ const projectsData = {
 ==================================================== */
 (function mobilePatch() {
 
-    /* --------------------------------------------------
-       FIX 1: Smooth scroll para TODOS los href="#id"
-       (hero buttons, footer links, cualquier anchor)
-    -------------------------------------------------- */
     function smoothScrollTo(targetId) {
         const target = document.getElementById(targetId);
         if (!target) return;
@@ -606,7 +599,6 @@ const projectsData = {
         link.style.pointerEvents = 'auto';
         link.style.position = 'relative';
         link.style.zIndex = '10';
-        // Área de toque mínima para móvil (44px recomendado)
         link.style.minHeight = '44px';
         link.style.display = 'inline-flex';
         link.style.alignItems = 'center';
@@ -629,7 +621,7 @@ const projectsData = {
                 form.reset();
                 const counter = document.getElementById('mensaje-counter');
                 if (counter) counter.textContent = '0 / 1000';
-                // Limpiar estados de error
+ 
                 form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
                 form.querySelectorAll('.form-field__error').forEach(el => {
                     el.textContent = '';
@@ -638,7 +630,7 @@ const projectsData = {
             });
         }
 
-        // Botón submit — asegurar área de toque
+        // Botón submit 
         const submitBtn = document.getElementById('btn-submit');
         if (submitBtn) {
             submitBtn.style.minHeight = '48px';
@@ -655,7 +647,6 @@ const projectsData = {
     -------------------------------------------------- */
     document.querySelectorAll('video, audio').forEach(media => {
         media.style.cssText += 'width:100%!important;max-width:100%!important;display:block!important;';
-        // Fuerza recarga del source si no cargó
         if (media.readyState === 0) {
             const src = media.querySelector('source')?.src || media.src;
             if (src) {

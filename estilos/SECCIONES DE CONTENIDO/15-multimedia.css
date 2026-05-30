@@ -6,9 +6,9 @@ Galería multimedia — grid 2 col, multimedia__card
  caption, caption-icon, duration, variante audio
 */
 
-/* ===================================================================
-   16. GALERÍA MULTIMEDIA — Rediseño Premium Minimalista
-   =================================================================== */
+/* ===========================
+   16. GALERÍA MULTIMEDIA 
+   =========================== */
 
 .multimedia__grid {
     display: grid;
@@ -17,7 +17,7 @@ Galería multimedia — grid 2 col, multimedia__card
     align-items: stretch;
 }
 
-/* — Card Base — Premium Glassmorphism Suave — */
+/* Card Base */
 .multimedia__card {
     position: relative;
     background: var(--color-card);
@@ -54,7 +54,7 @@ Galería multimedia — grid 2 col, multimedia__card
     z-index: 1;
 }
 
-/* — Línea decorativa inferior sutil — */
+/* Línea decorativa inferior */
 .multimedia__card-accent {
     position: absolute;
     bottom: 0;
@@ -75,7 +75,7 @@ Galería multimedia — grid 2 col, multimedia__card
     opacity: 1;
 }
 
-/* — Header de Card — */
+/* Header de Card */
 .multimedia__card-header {
     display: flex;
     align-items: center;
@@ -145,7 +145,7 @@ Galería multimedia — grid 2 col, multimedia__card
     border: 1px solid rgba(76, 161, 175, 0.12);
 }
 
-/* — Contenedor de Medios — */
+/* Contenedor de Medios */
 .multimedia__media-container {
     display: flex;
     flex-direction: column;
@@ -153,7 +153,7 @@ Galería multimedia — grid 2 col, multimedia__card
     flex: 1;
 }
 
-/* — Video Frame — Diseño Premium Controlado — */
+/* Video Frame */
 .multimedia__video-frame {
     position: relative;
     border-radius: var(--radius-md);
@@ -165,7 +165,7 @@ Galería multimedia — grid 2 col, multimedia__card
         0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Overlay decorativo muy sutil */
+/* Overlay decorativo */
 .multimedia__video-overlay {
     position: absolute;
     inset: 0;
@@ -198,7 +198,7 @@ Galería multimedia — grid 2 col, multimedia__card
     outline-offset: 2px;
 }
 
-/* — Audio Frame — Diseño Elegante Integrado — */
+/* Audio Frame */
 .multimedia__audio-frame {
     display: flex;
     flex-direction: column;
@@ -211,7 +211,7 @@ Galería multimedia — grid 2 col, multimedia__card
         0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* — Waveform Visualization — Premium minimalista — */
+/* Waveform Visualization */
 .multimedia__waveform {
     display: flex;
     align-items: flex-end;
@@ -293,7 +293,7 @@ Galería multimedia — grid 2 col, multimedia__card
     outline-offset: -2px;
 }
 
-/* — Caption — Elegante y Limpio — */
+/* Caption */
 .multimedia__caption {
     display: flex;
     align-items: flex-start;
@@ -350,7 +350,7 @@ Galería multimedia — grid 2 col, multimedia__card
     opacity: 0.8;
 }
 
-/* — Variante Audio — Ajustes específicos — */
+/* Variante Audio */
 .multimedia__media-container--audio {
     flex: 1;
     display: flex;

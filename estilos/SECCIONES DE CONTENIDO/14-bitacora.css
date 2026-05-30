@@ -5,9 +5,9 @@ microconsolas), tabla de datos, bitacora__nota, badges
 (active, done, progress, pending)
 */
 
-/* ===================================================================
-   15. BITÁCORA DE APRENDIZAJE — Punto 9: Microconsolas translúcidas
-   =================================================================== */
+/* =====================================
+   15. BITÁCORA DE APRENDIZAJE 
+   ===================================== */
 
 .bitacora__timeline-section,
 .bitacora__table-section {
@@ -110,7 +110,7 @@ microconsolas), tabla de datos, bitacora__nota, badges
     margin-bottom: var(--space-sm);
 }
 
-/* Punto 9: Microconsolas translúcidas cian */
+/* Microconsolas translúcidas cian */
 .timeline__tags {
     display: inline-block;
     background: rgba(76, 161, 175, 0.08);
@@ -162,7 +162,7 @@ microconsolas), tabla de datos, bitacora__nota, badges
     border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
-/* — Tabla de Bitácora — */
+/* Tabla de Bitácora */
 .table-scroll-wrapper {
     width: 100%;
     overflow-x: auto;
@@ -233,7 +233,7 @@ microconsolas), tabla de datos, bitacora__nota, badges
     white-space: nowrap;
 }
 
-/* Punto 9: Microconsolas en tabla */
+/* Microconsolas en tabla */
 .data-table code,
 .data-table--bitacora code {
     background: rgba(76, 161, 175, 0.10);
@@ -259,7 +259,7 @@ microconsolas), tabla de datos, bitacora__nota, badges
     border-left: 3px solid rgba(76, 161, 175, 0.25);
 }
 
-/* — Badges de estado — */
+/* Badges de estado */
 .badge {
     display: inline-block;
     padding: 4px 12px;

@@ -3,9 +3,9 @@ Estructura común — .site-main, .content-section,
 .content-section.is-revealed, .section-header (num, title, desc)
 */
 
-/* ===================================================================
-   08. SECCIÓN PRINCIPAL — Estructura común de todas las secciones
-   =================================================================== */
+/* ==================================
+   08. SECCIÓN PRINCIPAL 
+   ================================== */
 
 .site-main {
     padding: 0;

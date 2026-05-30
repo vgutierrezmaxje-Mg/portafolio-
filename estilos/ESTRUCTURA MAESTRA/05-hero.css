@@ -4,9 +4,9 @@
     CTA buttons (primary, secondary, ghost)
 */
 
-/* ===================================================================
-   07. SITE HEADER — Hero principal
-   =================================================================== */
+/* ==========================================
+   07. SITE HEADER — principal
+   ========================================== */
 
 .site-header {
     background: linear-gradient(135deg, var(--color-navy) 0%, #000f24 55%, #002744 100%);
@@ -37,7 +37,6 @@
     background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
 }
 
-/* — Hero Content — */
 .hero {
     position: relative;
     z-index: 2;

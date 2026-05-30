@@ -5,9 +5,9 @@ window-controls, body, editor, line-numbers, code, galería de imágenes,
 scrollbar interna, captions
 */
 
-/* ===================================================================
-   14. MODAL DE CÓDIGO FUENTE — Estilo VS Code Premium
-   =================================================================== */
+/* ====================================
+   14. MODAL DE CÓDIGO FUENTE 
+   ==================================== */
 
 .code-modal {
     position: fixed;
@@ -224,16 +224,15 @@ scrollbar interna, captions
 }
 
 
-/* ===================================================================
-   15. MODAL DE DEMO / CAPTURAS — Galería Premium
-   =================================================================== */
+/* =======================================
+   15. MODAL DE DEMO / CAPTURAS 
+   ======================================= */
 
 .demo-modal {
     position: fixed;
     inset: 0;
     margin: auto;
     width: 95%;
-    /* Aumentado de 800px a 1100px para capturas de sistemas de escritorio */
     max-width: 1100px;
     max-height: 92vh;
     background: rgba(15, 23, 42, 0.98);
@@ -300,7 +299,6 @@ scrollbar interna, captions
 
 .demo-modal__body {
     flex: 1;
-    /* Limita la zona de scroll a 75vh para contener las 8 capturas */
     max-height: 75vh;
     overflow-y: auto;
     overflow-x: hidden;
@@ -309,8 +307,6 @@ scrollbar interna, captions
     flex-direction: column;
     gap: var(--space-xl);
     scroll-behavior: smooth;
-
-    /* Scrollbar moderno (Webkit + Firefox) */
     scrollbar-width: thin;
     scrollbar-color: rgba(76, 161, 175, 0.50) rgba(0, 15, 36, 0.30);
 }
@@ -336,7 +332,6 @@ scrollbar interna, captions
 
 .demo-modal__figure {
     border-radius: var(--radius-lg);
-    /* overflow:visible para que el zoom hover no recorte la imagen */
     overflow: visible;
     background: rgba(0, 31, 63, 0.30);
     border: 1px solid rgba(76, 161, 175, 0.15);
@@ -349,12 +344,10 @@ scrollbar interna, captions
 }
 
 .demo-modal__image {
-    /* width:100% = ocupa todo el ancho del modal sin deformarse */
     width: 100%;
     height: auto;
     display: block;
     border-radius: var(--radius-lg);
-    /* object-fit:contain muestra la imagen COMPLETA, sin recorte */
     object-fit: contain;
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: zoom-in;

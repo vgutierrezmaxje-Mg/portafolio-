@@ -5,10 +5,9 @@ Problemas que puedo resolver + Mini Dashboard técnico — problema-card
                                     sublabel)
 */
 
-/* ===================================================================
+/* ==========================================
    SECCIÓN: PROBLEMAS QUE PUEDO RESOLVER
-   Cards premium con iconos minimalistas y diseño corporativo
-   =================================================================== */
+   ==========================================*/
 
 .problemas__grid {
     display: grid;
@@ -138,10 +137,9 @@ Problemas que puedo resolver + Mini Dashboard técnico — problema-card
 }
 
 
-/* ===================================================================
+/* ===========================================
    SECCIÓN: MINI DASHBOARD TÉCNICO
-   Indicadores de ingeniería con diseño limpio y corporativo
-   =================================================================== */
+   ===========================================*/
 
 .dashboard__grid {
     display: grid;

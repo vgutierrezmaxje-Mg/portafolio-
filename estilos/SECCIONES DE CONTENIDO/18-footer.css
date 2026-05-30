@@ -5,9 +5,9 @@ footer__nav, credits, copyright, university logo
 botones sociales expandibles (.boton, .icono, variantes nth-child por red social, .contacto wrapper)
 */
 
-/* ===================================================================
-   19. SITE FOOTER — Punto 12: Footer High-End Enterprise
-   =================================================================== */
+/* ======================
+   19. SITE FOOTER 
+   ====================== */
 
 .site-footer {
     background: linear-gradient(135deg, var(--color-navy-deep) 0%, var(--color-navy) 100%);
@@ -89,7 +89,7 @@ botones sociales expandibles (.boton, .icono, variantes nth-child por red social
     margin-top: 4px;
 }
 
-/* — Logo Universidad — Premium Floating Effect — */
+/* Logo Universidad */
 .site-footer__university {
     display: flex;
     justify-content: flex-start;
@@ -144,7 +144,7 @@ botones sociales expandibles (.boton, .icono, variantes nth-child por red social
         grayscale(0%) brightness(1.1) drop-shadow(0 4px 12px rgba(76, 161, 175, 0.20));
 }
 
-/* — Glow sutil decorativo — */
+/* Glow sutil decorativo */
 .site-footer__logo-glow {
     position: absolute;
     inset: -6px;
@@ -162,7 +162,7 @@ botones sociales expandibles (.boton, .icono, variantes nth-child por red social
     opacity: 1;
 }
 
-/* — Animacion flotante premium — */
+/* Animacion flotante premium */
 @keyframes floatLogo {
 
     0%,
@@ -176,7 +176,7 @@ botones sociales expandibles (.boton, .icono, variantes nth-child por red social
     }
 }
 
-/* — Punto 12: Botones expansivos flotantes de redes sociales — */
+/* Botones expansivos flotantes de redes sociales */
 .site-footer__social-float {
     display: flex;
     justify-content: center;
@@ -244,7 +244,7 @@ botones sociales expandibles (.boton, .icono, variantes nth-child por red social
     opacity: 1;
 }
 
-/* Colores exactos por red social */
+/* Colores por red social */
 .boton:nth-child(1):hover {
     background: linear-gradient(135deg, #25D366, #128C7E);
     border-color: #25D366;

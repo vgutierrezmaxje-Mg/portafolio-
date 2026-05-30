@@ -5,17 +5,10 @@ formacion-card (opacity:0 + transform) + estado .is-revealed +
 componente global code
 */
 
-/* ===================================================================
-   22. SCROLL REVEAL — Animación de entrada
-   =================================================================== */
+/* ==========================
+   22. SCROLL REVEAL
+   ========================== */
 
-/* ─── SCROLL REVEAL — Estado inicial (pre-reveal) ───────────────
-   BUG #3 CORREGIDO: La transition incluye ahora box-shadow y
-   border-color para que el hover post-reveal funcione con la
-   curva física de la Sec.13 sin propiedades huérfanas.
-   El transform reveal (24px → 0) y el hover transform (-7px)
-   coexisten gracias a que .is-revealed fija la base en 0.
-───────────────────────────────────────────────────────────────── */
 .project-card,
 .article-card,
 .metric-card,
@@ -42,9 +35,9 @@ componente global code
 }
 
 
-/* ===================================================================
+/* =================================================
    23. COMPONENTES GLOBALES ADICIONALES
-   =================================================================== */
+   ================================================= */
 
 code {
     background: rgba(76, 161, 175, 0.10);

@@ -3,9 +3,9 @@ Sobre mí — premium-card, bio, bio-header, bio-tag, intro, párrafos,
 bio-pills, métricas (metric-card, value, label)
 */
 
-/* ===================================================================
-   09. SOBRE MÍ — Punto 3: Saneamiento visual y Card Premium
-   =================================================================== */
+/* ==============================================================
+   09. SOBRE MÍ — Saneamiento visual y Card Premium
+   ==============================================================*/
 
 .sobre-mi__premium-card {
     background: var(--color-card);
